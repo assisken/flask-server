@@ -1,0 +1,11 @@
+version: '3'
+services:
+  db:
+    image: postgres:15.4
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: testing
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
